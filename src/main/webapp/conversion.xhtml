@@ -1,0 +1,39 @@
+<?xml version='1.0' encoding='UTF-8' ?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:h="http://java.sun.com/jsf/html"
+      xmlns:f="http://xmlns.jcp.org/jsf/core">
+    <h:head>
+        <title>Currency Converter</title>
+    </h:head>
+    <h:body>
+        <h1>Conversion Result:</h1>
+        <p>
+            <h:outputLabel for="currConversion" rendered="#{conversionManager.result != null}"  value="Conversion gives "/>
+            <h:outputText id="currConversion" value="#{conversionManager.result}"/>
+
+            <h:outputText rendered="#{conversionManager.result == null}"  value="No current conversion."/>
+        </p>
+        <hr/>
+        
+        <h3>Choose Conversion Type:</h3>
+        <h:form>
+        <p>
+            <h:selectOneMenu value = "#{conversionManager.newCurrency}"> 
+                <f:selectItem itemValue = "USD" itemLabel = "SEK to USD" /> 
+                <f:selectItem itemValue = "EUR" itemLabel = "SEK to EUR" /> 
+                <f:selectItem itemValue = "PLN" itemLabel = "SEK to PLN" /> 
+                <f:selectItem itemValue = "GBP" itemLabel = "SEK to GBP" />    
+             </h:selectOneMenu>  
+        </p>
+        <hr/>
+
+        <h3>Input Amount to Convert</h3>
+        <p>
+            <h:outputLabel for="conversionAmount" value="Amount to convert: "/>
+            <h:inputText id="conversionAmount" value="#{conversionManager.newAmount}"/>
+        </p>
+         <h:commandButton value = "Submit" action = "#{conversionManager.doConversion}" /> 
+      </h:form>    
+    </h:body>
+</html>

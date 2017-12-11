@@ -20,10 +20,14 @@
         <h:form>
         <p>
             <h:selectOneMenu value = "#{conversionManager.newCurrency}"> 
-                <f:selectItem itemValue = "USD" itemLabel = "SEK to USD" /> 
-                <f:selectItem itemValue = "EUR" itemLabel = "SEK to EUR" /> 
-                <f:selectItem itemValue = "PLN" itemLabel = "SEK to PLN" /> 
-                <f:selectItem itemValue = "GBP" itemLabel = "SEK to GBP" />    
+                <f:selectItem itemValue = "toUSD" itemLabel = "SEK to USD" /> 
+                <f:selectItem itemValue = "toEUR" itemLabel = "SEK to EUR" /> 
+                <f:selectItem itemValue = "toPLN" itemLabel = "SEK to PLN" /> 
+                <f:selectItem itemValue = "toGBP" itemLabel = "SEK to GBP" />
+                <f:selectItem itemValue = "fromUSD" itemLabel = "USD to SEK" /> 
+                <f:selectItem itemValue = "fromEUR" itemLabel = "EUR to SEK" /> 
+                <f:selectItem itemValue = "fromPLN" itemLabel = "PLN to SEK" /> 
+                <f:selectItem itemValue = "fromGBP" itemLabel = "GBP to SEK" />   
              </h:selectOneMenu>  
         </p>
         <hr/>

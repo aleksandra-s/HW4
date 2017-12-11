@@ -28,8 +28,18 @@ public class UserFacade {
         if(!stored){
             storeConversionRates();
         }
-        Conversion conversion = conversionDB.findConversion(currencyChoice);
-        return amountToConvert * conversion.getConversionRate();
+        String currency;
+        if(currencyChoice.length() == 7){
+            currency = currencyChoice.substring(4);
+            Conversion conversion = conversionDB.findConversion(currency);
+            return amountToConvert / conversion.getConversionRate();
+        }
+        else{
+            currency = currencyChoice.substring(2);
+            Conversion conversion = conversionDB.findConversion(currency);
+            return amountToConvert * conversion.getConversionRate();
+        } 
+        //return amountToConvert * conversion.getConversionRate();
     }
 
 }

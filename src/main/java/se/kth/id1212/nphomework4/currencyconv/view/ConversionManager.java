@@ -42,15 +42,22 @@ public class ConversionManager implements Serializable {
         conversionFailure = e;
     }
     
-    public void doConversion() {
+    public void doConversion(){
         try {
             startConversation();
             if(newAmount < 0){
                 throw new NegativeInputException("Cannot convert negative amount of SEK");
             }
             conversionFailure = null;
+            String currencyPrint;
+            if(newCurrency.length() == 7){
+                currencyPrint = "SEK";
+            }
+            else{
+                currencyPrint = newCurrency.substring(2);
+            } 
             double conversionAmount = userFacade.doConversion(newCurrency, newAmount);
-            result = conversionAmount + " " + newCurrency;
+            result = conversionAmount + " " + currencyPrint;
         } catch (Exception e) {
             handleException(e);
         }

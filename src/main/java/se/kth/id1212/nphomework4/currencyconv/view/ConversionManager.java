@@ -9,9 +9,8 @@ import javax.inject.Inject;
 import javax.inject.Named;
 import se.kth.id1212.nphomework4.currencyconv.controller.UserFacade;
 
-/**
- * Handles all interaction with the account JSF page.
- */
+//Handles all interaction with the conversion JSF page.
+
 @Named("conversionManager")
 @ConversationScoped
 public class ConversionManager implements Serializable {

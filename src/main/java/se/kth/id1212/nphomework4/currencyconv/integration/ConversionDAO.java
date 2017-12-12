@@ -9,16 +9,15 @@ import javax.persistence.EntityNotFoundException;
 import javax.persistence.PersistenceContext;
 import se.kth.id1212.nphomework4.currencyconv.model.Conversion;
 
-/**
- * Handles all interaction with the entity manager. No code outside of this class, except for the
- * JPA entities, shall haver anything to do with JPA.
- */
+//Handles all interaction with the entity manager
+
 @TransactionAttribute(TransactionAttributeType.MANDATORY)
 @Stateless
 public class ConversionDAO {
     @PersistenceContext(unitName = "bankPU")
     private EntityManager em;
 
+    //Find conversion rate stored in database using currency name
     public Conversion findConversion(String currencyKey) {
         Conversion conversion = em.find(Conversion.class, currencyKey);
         if (conversion == null) {
@@ -27,6 +26,7 @@ public class ConversionDAO {
         return conversion;
     }
     
+    //Store conversion rate and currency in database
     public void storeConversionRate(Conversion conv) {
         em.persist(conv);
     }

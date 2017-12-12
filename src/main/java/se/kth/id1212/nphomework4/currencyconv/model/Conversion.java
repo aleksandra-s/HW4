@@ -7,9 +7,8 @@ import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
 
-/**
- * A persistent representation of a conversion rate.
- */
+//A persistent representation of a conversion rate and currency object (stored in database)
+
 @Entity
 public class Conversion implements Serializable {
     @Id

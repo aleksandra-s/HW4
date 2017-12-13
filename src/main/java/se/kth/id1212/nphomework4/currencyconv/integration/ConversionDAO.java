@@ -26,7 +26,7 @@ public class ConversionDAO {
         return conversion;
     }
     
-    //Store conversion rate and currency in database
+    //Store conversion rate and currency in databaseb
     public void storeConversionRate(Conversion conv) {
         em.persist(conv);
     }

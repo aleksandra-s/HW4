@@ -45,7 +45,7 @@ public class ConversionManager implements Serializable {
         try {
             startConversation();
             if(newAmount < 0){
-                throw new NegativeInputException("Cannot convert negative amount of SEK");
+                throw new NegativeInputException("Cannot convert negative amount");
             }
             conversionFailure = null;
             String currencyPrint;
